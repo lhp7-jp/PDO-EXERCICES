@@ -1,0 +1,18 @@
+body {
+    background-color: #092c4d;
+    text-align: center;
+    width: 600px;
+    margin: 0 auto;
+    padding: 0 20px 20px 20px;
+    color: whitesmoke;
+  }
+form, button, input {
+    display: block;
+    text-align: center;
+    margin: auto;
+}
+td, #imgPreview, .column {
+    width: 200px; 
+	max-height: 200px;
+	display: block;
+}
