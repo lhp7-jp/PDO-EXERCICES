@@ -1,0 +1,40 @@
+/* Paragraphes en bleu par défaut */
+p
+{
+    color: blue;
+}
+
+/* Nouvelles règles si la fenêtre fait au plus 1024px de large */
+@media screen and (max-width: 1024px)
+{
+    p
+    {
+        color: red; 
+        background-color: black;
+        font-size: 1.2em;
+    }
+}
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  /* Add a color to the active/current link */
+  .topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+  
+.card{
+    background-color: grey;
+    margin: 0.3rem;
+}
+.para{
+    max-height: 90px;
+    overflow: auto;
+}
+.colorCards{
+    background-color: lightgray;
+}

@@ -1,18 +1,51 @@
 body {
-    background-color: #092c4d;
-    text-align: center;
-    width: 600px;
-    margin: 0 auto;
-    padding: 0 20px 20px 20px;
-    color: whitesmoke;
-  }
-form, button, input {
-    display: block;
-    text-align: center;
-    margin: auto;
+  background-color: #00539F;
+  text-align: center;
+  width: 600px;
+  margin: 0 auto;
+  padding: 0 20px 20px 20px;
+  color: whitesmoke;
+  position: relative;
 }
-td, #imgPreview, .column {
-    width: 200px; 
-	max-height: 200px;
-	display: block;
+
+button {
+  background-color: yellow;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+h1, h2, .imgLamanu, .myHref {
+  background-color: #00539F;
+  text-align: center;
+  color: whitesmoke;
+}
+
+table {
+  border: solid black;
+  background-color: #00539F;
+  text-align: center;
+  color: whitesmoke;
+  }
+
+td {
+  border: solid red;
+  background-color: #00539F;
+  text-align: center;
+  color: whitesmoke;
+ 
+
+}
+
+th, tr {
+  border: solid green;
+  background-color: #00539F;
+  text-align: center;
+  color: whitesmoke;
 }
