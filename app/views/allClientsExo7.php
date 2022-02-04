@@ -31,22 +31,25 @@ require "../controllers/allClientsController.php";
     <tbody>
 
       <?php foreach ($clientsArray as $client) { ?>
-          <tr>
+        <tr>
           <th scope="row"><?= $client['id'] ?></th>
           <td><?= $client['lastName'] ?></td>
           <td><?= $client['firstName'] ?></td>
           <td><?= $client['birthDate'] ?></td>
-          <?php 
-          var_dump($client['card']);
-          if ($client['card'] = "0") {?>
+          <?php
+          //var_dump($client['card']);
+          if ($client['card'] == "0") { ?>
             <td>Non</td>
             <td> </td>
+          <?php } elseif ($client['cardNumber'] == "2377" or $client['cardNumber'] == "2198") { ?>
+            <td> Carte de Fidélité </td>
+            <td><?= $client['cardNumber'] ?></td>
           <?php } else { ?>
-              <td> Carte de  </td>
-          <?php } ?>
-          <td><?= $client['cardNumber'] ?></td>
+            <td> Autre carte </td>
+            <td><?= $client['cardNumber'] ?></td>
         </tr>
-      <?php } ?>
+    <?php }
+        } ?>
 
     </tbody>
   </table>
