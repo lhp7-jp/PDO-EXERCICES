@@ -1,0 +1,37 @@
+body {
+  background-color: #00539F;
+  text-align: center;
+  width: 600px;
+  margin: 0 auto;
+  padding: 0 20px 20px 20px;
+  color: whitesmoke;
+  position: relative;
+}
+label{
+  background-color: #00539F;
+  text-align: left;
+  width: 600px;
+  margin: 0 auto;
+  padding: 0 20px 20px 20px;
+  color: whitesmoke;
+  position: relative;
+}
+button, .myInput, .myHref{
+  background-color: yellow;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-weight:bold;
+  font-size:11px;
+}
+h1, h2, h3, h5, .imgLamanu, .g-recaptcha{
+  background-color: #00539F;
+  text-align: center;
+  color: whitesmoke;
+}
