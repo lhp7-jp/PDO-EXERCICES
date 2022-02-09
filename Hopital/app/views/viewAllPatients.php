@@ -14,9 +14,12 @@ require_once "../controllers/ControllerViewPatient.php";
 </head>
 
 <body>
-  <h1>HOPITAL La Manu</h1>
-  <h2>Tous les Patients enregistrés</h2>
-  <table align="center">
+  <div>
+    <img src="../../public/img/logo_la_manu_formation_400.png" class="imgLamanu" alt="logo La Manu">
+    <h1>HOPITAL La Manu </h1>
+    <h2>Tous les Patients enregistrés</h2>
+  </div>
+  <table>
     <thead>
       <tr>
         <th scope="col">ID</th>
@@ -25,29 +28,33 @@ require_once "../controllers/ControllerViewPatient.php";
         <th scope="col">Birthdate</th>
         <th scope="col">phone</th>
         <th scope="col">mail</th>
-        <th scope="col">Modification</th>
+        <th scope="col">Informations</th>
         <th scope="col">Suppression</th>
       </tr>
     </thead>
     <tbody>
-     <?php foreach ($patientsArray as $patients) { ?>
+      <?php foreach ($patientsArray as $patients) { ?>
         <tr>
           <th scope="row"><?= $patients['id'] ?></th>
-          <td><?= $patients['lastname'] ?></td>
+          <td><?= $patients['lastname'] ?> </td>
           <td><?= $patients['firstname'] ?></td>
           <td><?= $patients['birthdate'] ?></td>
           <td><?= $patients['phone'] ?></td>
           <td><?= $patients['mail'] ?></td>
-          <td></td>
-          <td></td>
+          <td>
+          <label class="myLabel" for="lastName">Info</label>
+          <button class="myInfo" type="text">
+          </td>
+          <td>
+          <label class="myLabel" for="lastName" >Suprression</label>
+          <button class="myDelete" type="text">
+          </td>
         </tr>
       <?php } ?>
     </tbody>
   </table>
   <p></p>
   <button onclick="window.location.href = 'home.php';">Retour</button>
-  <p></p>
-  <img src="../../public/img/logo_la_manu_formation_400.png" class="imgLamanu" alt="logo La Manu">
   <p></p>
   <!-- Et voici notre pied de page utilisé sur toutes les pages du site -->
   <footer>

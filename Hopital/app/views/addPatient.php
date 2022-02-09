@@ -16,57 +16,71 @@ require "../controllers/ControllerAddPatient.php";
 </head>
 
 <body>
-  <h1>HOPITAL La Manu - Ajout de patient</h1>
-  <h5>Tous les champs en jaune sont obligatoires</h5>
+  <div>
+    <img src="../../public/img/logo_la_manu_formation_400.png" class="imgLamanu" alt="logo La Manu">
+    <h1>HOPITAL La Manu </h1>
+    <h2>Ajout de patient</h2>
+    <h5>Tous les champs en jaune sont obligatoires</h5>
+    <h3></h3>
+  </div>
   <?php if ($addPatientOk) { ?>
     <p>Le patient a bien été enregistré</p>
     <h3></h3>
     <a href="addPatient.php" class="myHref">Ajouter un nouveau patient</a>
     <h3></h3>
   <?php } else { ?>
-
-    <form method="post" action="" novalidate>
-      <div>
-        <label for="lastName">Nom </label>
-        <span>
-          <?= $msgErrors["lastName"] ?? "" ?>
-        </span>
-        <input class="myInput" value="<?= isset($_POST['lastName']) ? htmlspecialchars($_POST["lastName"]) : "" ?>" type="text" name="lastName" placeholder="Dupont" required />
-      </div>
-      <div>
-        <label for="firstName">Prénom : </label><span>
-          <!-- je verifie la clef nom dans mon tableau msgErrors si oui je l'affiche -->
-          <?= $msgErrors["firstName"] ?? "" ?>
-          <input class="myInput" value="<?= isset($_POST['firstName']) ? htmlspecialchars($_POST["firstName"]) : "" ?>" type="text" name="firstName" placeholder="Patrick" required /><br />
-      </div>
-      <div>
-        <label for="BirthDate">Date de naissance : </label><span>
-          <!-- je verifie la clef nom dans mon tableau msgErrors si oui je l'affiche -->
-          <?= $msgErrors["BirthDate"] ?? "" ?>
-          <input class="myInput" value="<?= isset($_POST['BirthDate']) ? htmlspecialchars($_POST["BirthDate"]) : "" ?>" type="date" name="BirthDate" placeholder="" required pattern="^\d{1,2}/\d{1,2}/\d{4}$/u" /><br />
-      </div>
-      <div>
-        <label for="Phone">Téléphone : </label><span>
-          <!-- je verifie la clef nom dans mon tableau msgErrors si oui je l'affiche -->
-          <?= $msgErrors["Phone"] ?? "" ?>
-          <input class="myInput" value="<?= isset($_POST['Phone']) ? htmlspecialchars($_POST["Phone"]) : "" ?>" type="number" name="Phone" placeholder="0666666666" required pattern="/^0[6-7]([-. ]?[0-9]{2}){4}$/u" /><br />
-      </div>
-      <div>
-        <label for="Mail">Mail : </label>
-        <span">
-          <!-- je verifie la clef nom dans mon tableau msgErrors si oui je l'affiche -->
-          <?= $msgErrors["Mail"] ?? "" ?>
-          <input class="myInput" value="<?= isset($_POST['Mail']) ? htmlspecialchars($_POST["Mail"]) : "" ?>" type="email" name="Mail" placeholder="patrick.dupont@lamanu.fr" required pattern="/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/u" /><br />
-      </div>
-      <input class="myInput" type="submit" value="Nouveau Patient" name="submitButton" />
-    </form>
+    <div class="container">
+      <form class="myForm" method="post" action="" novalidate>
+        <div>
+          <label class="myLabel" for="lastName">Nom :</label>
+          <input class="myInputAdd" value="<?= isset($_POST['lastName']) ? htmlspecialchars($_POST["lastName"]) : "" ?>" type="text" name="lastName" placeholder="Dupont" required />
+          <span class="mySpan">
+            <?= $arrayErrors["lastName"] ?? "" ?>
+          </span>
+        </div>
+        <div>
+        <label class="myLabel" for="firstName">Prénom : </label>
+          <input class="myInputAdd" value="<?= isset($_POST['firstName']) ? htmlspecialchars($_POST["firstName"]) : "" ?>" type="text" name="firstName" placeholder="Patrick" required />
+          <span class="mySpan">
+            <!-- je verifie la clef nom dans mon tableau msgErrors si oui je l'affiche -->
+            <?= $arrayErrors["firstName"] ?? "" ?>
+          </span>
+        </div>
+        <div>
+          <label class="myLabel" for="BirthDate">Date de naissance : </label>
+          <input class="myInputAdd" value="<?= isset($_POST['BirthDate']) ? htmlspecialchars($_POST["BirthDate"]) : "" ?>" type="date" name="BirthDate" placeholder="" required pattern="^\d{1,2}/\d{1,2}/\d{4}$/u" />
+          <span class="mySpan">
+            <!-- je verifie la clef nom dans mon tableau msgErrors si oui je l'affiche -->
+            <?= $arrayErrors["BirthDate"] ?? "" ?>
+          </span>
+        </div>
+        <div>
+          <label class="myLabel" for="Phone">Téléphone : </label>
+          <?= $arrayErrors["Phone"] ?? "" ?>
+          <input class="myInputAdd" value="<?= isset($_POST['Phone']) ? htmlspecialchars($_POST["Phone"]) : "" ?>" type="number" name="Phone" placeholder="0666666666" required pattern="/^0[6-7]([-. ]?[0-9]{2}){4}$/u" />
+          <span class="mySpan">
+            <!-- je verifie la clef nom dans mon tableau msgErrors si oui je l'affiche -->
+          </span>
+        </div>
+        <div>
+          <label class="myLabel" for="Mail">Mail : </label>
+          <input class="myInputAdd" value="<?= isset($_POST['Mail']) ? htmlspecialchars($_POST["Mail"]) : "" ?>" type="email" name="Mail" placeholder="patrick.dupont@lamanu.fr" required pattern="/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/u" /></br>
+            <span class="mySpan"">
+            <!-- je verifie la clef nom dans mon tableau msgErrors si oui je l'affiche -->
+            <?= $arrayErrors["Mail"] ?? "" ?>
+            </span>
+        </div>
+        <div>
+        </br>
+        <p>   </p>
+        <input class="myInputSave" type="submit" value="Enregistrez un nouveau patient" name="submitButton" />
+        </div>
+      </form>
+    </div>
   <?php } ?>
   <h3></h3>
   <!-- <div class="g-recaptcha" data-sitekey="6LcoAWMeAAAAAEcKRd7ejrnwF5jFyxNF2raxYGfP"></div> -->
-  <h3></h3>
-  <img src="../../public/img/logo_la_manu_formation_400.png" class="imgLamanu" alt="logo La Manu">
-  <p></p>
-  <button onclick="window.location.href = 'home.php';">Retour</button>
+  <button class="myButton" onclick="window.location.href = 'home.php';">Retour</button>
   <p></p>
   <!-- Et voici notre pied de page utilisé sur toutes les pages du site -->
   <footer>

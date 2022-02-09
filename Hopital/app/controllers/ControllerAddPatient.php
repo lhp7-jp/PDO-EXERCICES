@@ -1,17 +1,17 @@
 <?php
+require_once '../../models/Config.php';
+require_once '../../models/DataBase.php';
+require_once '../../models/Patients.php';
 $regexName = "/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]{2,25}$/u";
 // $regexBirthDate = "/^(([0-2][1-9])|(3[0-1]))-((0[1-9])|(1[0-2]))-([1]|[2])[0-9]{1}(([1-9][0-9])|([0][8-9]))$/u";
 $regexPhone = "/^0[6-7]([-. ]?[0-9]{2}){4}$/u";
 // Tableau vide qui va nous permettre de stocker les erreurs 
 $arrayErrors = [];
-require_once '../../models/Config.php';
-require_once '../../models/DataBase.php';
-require_once '../../models/Patients.php';
 // creer une variable pour cacher ou montrer ton formulaire
 $addPatientOk = false;
-// nous verifions si input submit est présent dans $_POST
-if (isset($_POST["submitButton"])) {
-    // nous verifions si input nom est présent dans $_POST
+// nous verifions si $_POST n'est pas vide 
+if (!empty($_POST)) {
+       // nous verifions si input nom est présent dans $_POST
     if (isset($_POST["lastName"])) {
         // a l'aide de la fonction empty je verifie que l'input nom n'est pas vide 
         if (empty($_POST["lastName"])) {

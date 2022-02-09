@@ -19,7 +19,7 @@ $resultQuery->bindValue(':Mail', $Mail,PDO::PARAM_STR);
 $resultQuery->execute();
 }
 /**
- * Méthode permettant de verifier si adresse mail non utilisé
+ * Méthode permettant de lister les patients;
  * 
  * @ return array : tableau associatif
  */
@@ -31,7 +31,20 @@ $resultQuery = $dbMy->query($mySql);
 return $resultQuery->fetchAll();
 }
 /**
- * Méthode permettant de lister les patients;
+ * Méthode permettant de lister un patient;
+ * 
+ * @ return array : tableau associatif
+ */
+// public function viewOnePatients(int $id) : void
+// {
+// $dbMy = $this->connectDb();
+// $mySql = "SELECT * FROM `patients` where :id = 1";
+// $resultQuery = $dbMy->prepare($mySql);
+// $resultQuery->bindValue(':id', $id, PDO::PARAM_INT);
+// $resultQuery->execute();
+// }
+/**
+ * Méthode permettant de verifier si adresse mail non utilisé
  * 
  * @ return array : tableau associatif
  */
