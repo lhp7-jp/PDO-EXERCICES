@@ -26,7 +26,7 @@ $resultQuery->execute();
 public function viewAllPatients() : array
 {
 $dbMy = $this->connectDb();
-$mySql = "SELECT `id`, `lastname`, `firstname`, `birthdate`, `phone`, `mail` FROM `patients` ORDER BY `id`";
+$mySql = "SELECT `id`, `lastname`, `firstname`, date_format(`birthdate`,'%d/%m/%Y') as birthdate, `phone`, `mail` FROM `patients` ORDER BY `id`";
 $resultQuery = $dbMy->query($mySql);
 return $resultQuery->fetchAll();
 }
@@ -38,7 +38,7 @@ return $resultQuery->fetchAll();
 public function viewOnePatients(int $id) : array
 {
 $dbMy = $this->connectDb();
-$mySql = "SELECT `id`,`lastname`, `firstname`, `birthdate`, `phone`, `mail` FROM `patients` WHERE `id`= :id";
+$mySql = "SELECT `id`,`lastname`, `firstname`, date_format(`birthdate`,'%d/%m/%Y') as birthdate , `phone`, `mail` FROM `patients` WHERE `id`= :id";
 $resultQuery = $dbMy->prepare($mySql);
 $resultQuery->bindValue(':id', $id, PDO::PARAM_INT);
 $resultQuery->execute();

@@ -27,7 +27,7 @@ require_once '../controllers/ControllerHome.php';
     <h3></h3>
     <br>
     <h2>Gestion des rendez-vous</h2>
-    <button onclick="window.location.href = 'addAppointments.php?results=addAppointments';">Enregistrer un nouveau rendez-vous</button>
+    <button onclick="window.location.href = 'manageAppointments.php?results=addAppointments';">Enregistrer un nouveau rendez-vous</button>
     <h3></h3>
     <button onclick="window.location.href = 'viewAllAppointments.php?results=viewAllAppointments';">Liste des rendez-vous</button>
     <h3></h3>

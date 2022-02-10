@@ -1,5 +1,5 @@
 <?php
-require_once "../controllers/ControllerViewPatient.php";
+require_once "../controllers/ControllerViewAppointments.php";
 ?>
 
 <!DOCTYPE html>
@@ -22,32 +22,33 @@ require_once "../controllers/ControllerViewPatient.php";
   <table>
     <thead>
       <tr>
-        <th scope="col">ID</th>
+        <th scope="col">date</th>
+        <th scope="col">time</th>
+        <th scope="col">idPatients</th>
         <th scope="col">lastname</th>
         <th scope="col">firstname</th>
-        <th scope="col">Birthdate</th>
-        <th scope="col">phone</th>
-        <th scope="col">mail</th>
+        <th scope="col">birthdate</th>
         <th scope="col">Informations</th>
         <th scope="col">Suppression</th>
       </tr>
     </thead>
     <tbody>
-    <form action = "infoPatient.php" method = "post">
-      <?php foreach ($patientsArray as $patients) { ?>
+    <form action = "manageAppointments.php" method = "post">
+      <?php foreach ($appointmentsArray as $appointments) { 
+        var_dump($appointmentsArray);?>
         <tr>
-          <th scope="row"><?= $patients['id'] ?></th>
-          <td><?= $patients['lastname'] ?> </td>
-          <td><?= $patients['firstname'] ?></td>
-          <td><?= $patients['birthdate'] ?></td>
-          <td><?= $patients['phone'] ?></td>
-          <td><?= $patients['mail'] ?></td>
-          <td>
-            <input type="hidden" name="idPatientView" value="<?= $patients['id'] ?>">
+          <th scope="row"><?= date($appointments['dateHour']) ?></th>
+          <td><?= time($appointments['dateHour']) ?> </td>
+          <td><?= $appointments['idPatients'] ?> </td>
+          <td><?= $appointments['lastname'] ?></td>
+          <td><?= $appointments['firstname'] ?></td>
+          <td><?= $appointments['birthdate'] ?></td>
+         <td>
+            <input type="hidden" name="idappointmentsView" value="<?= $appointments['idPatients'] ?>">
             <button class="myButton">Plus d'Informations</button>
           </td>
           <td>
-          <input type="hidden" name="idPatientDelete" value="<?= $patients['id'] ?>">
+          <input type="hidden" name="idappointmentsDelete" value="<?= $appointments['idPatients'] ?>">
             <button class="myButton">suppression</button>
           </td>
         </tr>

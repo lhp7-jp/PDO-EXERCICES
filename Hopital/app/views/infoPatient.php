@@ -26,7 +26,7 @@ require_once '../controllers/infoPatientController.php';
         <div class="container-fluid">
             <a class="navbar-brand" href="home.php?results=home">Accueil</a>
             <a class="navbar-brand" href="addPatient.php?results=addPatient">Ajout d'un patient</a>
-            <a class="navbar-brand" href="viewAllPatients.php?results=gestionPatient">Gestion des patients</a>
+            <a class="navbar-brand" href="gestionPatient.php?results=gestionPatient">Gestion des patients</a>
 
         </div>
     </nav>
