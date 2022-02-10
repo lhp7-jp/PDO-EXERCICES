@@ -33,6 +33,7 @@ require_once "../controllers/ControllerViewPatient.php";
       </tr>
     </thead>
     <tbody>
+    <form action = "infoPatient.php" method = "post">
       <?php foreach ($patientsArray as $patients) { ?>
         <tr>
           <th scope="row"><?= $patients['id'] ?></th>
@@ -42,15 +43,16 @@ require_once "../controllers/ControllerViewPatient.php";
           <td><?= $patients['phone'] ?></td>
           <td><?= $patients['mail'] ?></td>
           <td>
-          <label class="myLabel" for="lastName">Info</label>
-          <button class="myInfo" type="text">
+            <input type="hidden" name="idPatientView" value="<?= $patients['id'] ?>">
+            <button class="myButton">Plus d'Informations</button>
           </td>
           <td>
-          <label class="myLabel" for="lastName" >Suprression</label>
-          <button class="myDelete" type="text">
+          <input type="hidden" name="idPatientDelete" value="<?= $patients['id'] ?>">
+            <button class="myButton">suppression</button>
           </td>
         </tr>
       <?php } ?>
+      </form>
     </tbody>
   </table>
   <p></p>
