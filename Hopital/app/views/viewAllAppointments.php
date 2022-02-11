@@ -34,11 +34,10 @@ require_once "../controllers/ControllerViewAppointments.php";
     </thead>
     <tbody>
     <form action = "manageAppointments.php" method = "post">
-      <?php foreach ($appointmentsArray as $appointments) { 
-        var_dump($appointmentsArray);?>
+      <?php foreach ($appointmentsArray as $appointments) { ?>
         <tr>
           <th scope="row"><?= date($appointments['dateHour']) ?></th>
-          <td><?= time($appointments['dateHour']) ?> </td>
+          <td><?= date($appointments['dateHour']) ?> </td>
           <td><?= $appointments['idPatients'] ?> </td>
           <td><?= $appointments['lastname'] ?></td>
           <td><?= $appointments['firstname'] ?></td>

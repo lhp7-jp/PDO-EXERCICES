@@ -24,6 +24,7 @@ require_once '../controllers/infoPatientController.php';
 
     <nav class="navbar navbar-light bg-light sticky-top">
         <div class="container-fluid">
+            <h1></h1>
             <a class="navbar-brand" href="home.php?results=home">Accueil</a>
             <a class="navbar-brand" href="addPatient.php?results=addPatient">Ajout d'un patient</a>
             <a class="navbar-brand" href="gestionPatient.php?results=gestionPatient">Gestion des patients</a>
@@ -47,19 +48,19 @@ require_once '../controllers/infoPatientController.php';
         if (isset($patientInfo)) { ?>
             <form class="container col-5" action="" method="POST" novalidate>
                 <div class="mb-3">
-                    <label for="nom" class="form-label mt-3">Nom : </label><span class="text-danger">
+                    <label for="lastName" class="form-label mt-3">Nom : </label><span class="text-danger">
                         <?=
-                        $arrayError["nom"] ?? " ";
+                        $arrayError["lastName"] ?? " ";
                         ?>
                     </span>
-                    <input value="<?= $patientInfo['lastname'] ?>" name="nom" type="text" class="form-control" id="nom" placeholder="Ex : Dupont..." <?= isset($_POST["modifyBtn"]) ? "" : 'disabled' ?>>
+                    <input value="<?= $patientInfo['lastname'] ?>" name="lastName" type="text" class="form-control" id="lastName" placeholder="Ex : Dupont..." <?= isset($_POST["modifyBtn"]) ? "" : 'disabled' ?>>
 
-                    <label for="prenom" class="form-label mt-3">Prénom : </label><span class="text-danger">
+                    <label for="firstName" class="form-label mt-3">Prénom : </label><span class="text-danger">
                         <?=
-                        $arrayError["prenom"] ?? "";
+                        $arrayError["firstName"] ?? "";
                         ?>
                     </span>
-                    <input value="<?= $patientInfo['firstname'] ?>" name=" prenom" type="text" class="form-control" id="prenom" placeholder="Ex : Jean..." <?= isset($_POST["modifyBtn"]) ? "" : 'disabled' ?>>
+                    <input value="<?= $patientInfo['firstname'] ?>" name=" prenom" type="text" class="form-control" id="firstName" placeholder="Ex : Jean..." <?= isset($_POST["modifyBtn"]) ? "" : 'disabled' ?>>
 
                     <label for="birthDate" class="form-label mt-3">Date de naissance : </label><span class="text-danger">
                         <?=
@@ -68,19 +69,19 @@ require_once '../controllers/infoPatientController.php';
                     </span>
                     <input value="<?= $patientInfo['birthdate'] ?>" name=" birthDate" type="date" class="form-control" id="birthDate" placeholder="24/12/2021" <?= isset($_POST["modifyBtn"]) ? "" : 'disabled' ?>>
 
-                    <label for="phone" class="form-label mt-3">N° de téléphone : </label><span class="text-danger">
+                    <label for="Phone" class="form-label mt-3">N° de téléphone : </label><span class="text-danger">
                         <?=
-                        $arrayError["phone"] ?? " ";
+                        $arrayError["Phone"] ?? " ";
                         ?>
                     </span>
-                    <input value="<?= $patientInfo['phone'] ?>" name="phone" type="tel" class="form-control" id="phone" placeholder="061256XXXX" <?= isset($_POST["modifyBtn"]) ? "" : 'disabled' ?>>
+                    <input value="<?= $patientInfo['phone'] ?>" name="Phone" type="tel" class="form-control" id="Phone" placeholder="061256XXXX" <?= isset($_POST["modifyBtn"]) ? "" : 'disabled' ?>>
 
-                    <label for="mail" class="form-label mt-3">Adresse mail : </label><span class="text-danger">
+                    <label for="Mail" class="form-label mt-3">Adresse mail : </label><span class="text-danger">
                         <?=
-                        $arrayError["mail"] ?? " ";
+                        $arrayError["Mail"] ?? " ";
                         ?>
                     </span>
-                    <input value="<?= $patientInfo['mail'] ?>" name="mail" type="email" class="form-control" id="mail" placeholder="Ex : hopital@gmail.com" <?= isset($_POST["modifyBtn"]) ? "" : 'disabled' ?>>
+                    <input value="<?= $patientInfo['mail'] ?>" name="Mail" type="email" class="form-control" id="Mail" placeholder="Ex : hopital@gmail.com" <?= isset($_POST["modifyBtn"]) ? "" : 'disabled' ?>>
 
                 </div>
 
